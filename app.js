@@ -4,12 +4,14 @@ const encrypted = ['ai', 'enter', 'imes', 'ober', 'ufat'];
 function encryptMessage() {
     let message = document.querySelector("#text").value;
     let encryptedMessage = encrypt(message);
+    document.querySelector("#heading").innerText = "Tu mensaje ha sido codificado";
     document.querySelector("#message").innerText = encryptedMessage;
 }
 
 function decryptMessage() {
     let message = document.querySelector("#text").value;
     let decryptedMessage = decrypt(message);
+    document.querySelector("#heading").innerText = "Tu mensaje ha sido decodificado";
     document.querySelector("#message").innerText = decryptedMessage;
 }
 
