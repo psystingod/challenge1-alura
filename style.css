@@ -136,12 +136,15 @@
 
 .container .sidebar textarea, .container .sidebar textarea:focus {
     margin-top: 5%;
-    border: 0;
+    border: 1;
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     resize: none;
     outline: none;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
