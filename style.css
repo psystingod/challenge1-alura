@@ -136,7 +136,7 @@
 
 .container .sidebar textarea, .container .sidebar textarea:focus {
     margin-top: 5%;
-    border: 1;
+    border: 0;
     width: 100%;
     font-size: 1em;
     resize: none;
