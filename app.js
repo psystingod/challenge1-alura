@@ -67,7 +67,7 @@ function copyText() {
     alert("Texto copiado: " + copyText.value);
 }
 
-let originalMessage = document.querySelector("#message").innerText;
+let originalMessage = document.querySelector("#message").value;
 let originalHeading = document.querySelector("#heading").innerText;
 
 function changeMessage() {
