@@ -56,25 +56,41 @@ function decrypt(input) {
     return decryptedText;
 }
 
+function copyText() {
+    var copyText = document.querySelector("#message");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+
+    navigator.clipboard.writeText(copyText.value);
+
+    alert("Texto copiado: " + copyText.value);
+}
+
 let originalMessage = document.querySelector("#message").innerText;
 let originalHeading = document.querySelector("#heading").innerText;
 
 function changeMessage() {
-    document.querySelector("#message").innerText = "";
+    document.querySelector("#message").value = "";
+    document.querySelector("#copiar").classList.remove("quit");
     document.querySelector("#heading").innerText = "";
+    document.querySelector("img").classList.add("quit");
     let rawText = document.querySelector("#text").value;
-    let message = document.querySelector("#message").innerText;
+    let message = document.querySelector("#message").value;
     message += rawText;
 
-    document.querySelector("#message").innerText = message;
+    document.querySelector("#message").value = message;
     document.querySelector("#heading").innerText = "Tu mensaje está listo para encriptar/desencriptar";
 
-    if (document.querySelector("#message").innerText === "") {
-        document.querySelector("#message").innerText = originalMessage;
+    if (document.querySelector("#message").value === "") {
+        document.querySelector("#message").value = originalMessage;
         document.querySelector("#heading").innerText = originalHeading;
+        document.querySelector("img").classList.remove("quit");
+        document.querySelector("#copiar").classList.add("quit");
     }
 }
 
 document.querySelector("#encriptar").onclick = encryptMessage;
 document.querySelector("#desencriptar").onclick = decryptMessage;
 document.querySelector("#text").onkeyup = changeMessage;
+document.querySelector("#copiar").onclick = copyText;
