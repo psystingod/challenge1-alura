@@ -45,7 +45,7 @@
     font-size: 1.0em;
 }
 
-.container .main span {
+#advice {
     font-size: 0.68em;
     display: inline-block;
     background-color: #ffffff;
@@ -163,4 +163,12 @@
 
 .quit {
     display: none;
+}
+
+.danger {
+    background-color: #f84949 !important;
+    color: #ffffff !important;
+}
+.dangerText {
+    color: #f84949 !important;
 }

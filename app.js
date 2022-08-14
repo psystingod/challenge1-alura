@@ -78,6 +78,25 @@ function changeMessage() {
     let rawText = document.querySelector("#text").value;
     let message = document.querySelector("#message").value;
     message += rawText;
+    let btns = document.querySelectorAll("button");
+
+    if(message.match(/\W/)) {
+
+        btns.forEach(function (btn) {
+            btn.disabled = "true";
+        })
+
+        document.querySelector("#advice").classList.add("danger");
+        document.querySelector("#adviceText").classList.add("dangerText");
+    } else {
+
+        btns.forEach(function (btn) {
+            btn.removeAttribute("disabled");
+        })
+
+        document.querySelector("#advice").classList.remove("danger");
+        document.querySelector("#adviceText").classList.remove("dangerText");
+    }
 
     document.querySelector("#message").value = message;
     document.querySelector("#heading").innerText = "Tu mensaje está listo para encriptar/desencriptar";
